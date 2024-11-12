@@ -1,0 +1,60 @@
+---
+interface Props {
+	location: string;
+	rating: string;
+	description: string;
+}
+
+const { location, rating, description } = Astro.props;
+---
+
+<div class="travel-entry">
+	<div class="header">
+		<h2>{location}</h2>
+		<span class="rating">{rating}</span>
+	</div>
+	<p>{description}</p>
+</div>
+
+<style>
+	.travel-entry {
+		background: rgba(var(--accent-dark), 0.2);
+		border: 1px solid rgba(var(--accent-light), 0.2);
+		border-radius: 8px;
+		padding: 1.5rem;
+		transition: transform 0.2s ease-in-out;
+	}
+
+	.travel-entry:hover {
+		transform: translateY(-2px);
+		background: rgba(var(--accent-dark), 0.3);
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		color: rgb(var(--accent-light));
+	}
+
+	.rating {
+		background: rgba(var(--accent), 0.2);
+		padding: 0.3em 0.8em;
+		border-radius: 4px;
+		font-size: 0.9em;
+		color: rgb(var(--accent-light));
+	}
+
+	p {
+		margin: 0;
+		line-height: 1.5;
+		color: #ffffff;
+		opacity: 0.9;
+	}
+</style>

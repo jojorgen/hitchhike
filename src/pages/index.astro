@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import TravelEntry from '../components/TravelEntry.astro';
+---
+
+<Layout title="The Utterly Remarkable Travel Guide">
+	<main>
+		<h1>DON'T <span class="text-gradient">PANIC</span></h1>
+		<p class="instructions">
+			Welcome to the most peculiar travel guide in this particular region of space-time. 
+			<strong>Remember:</strong> A towel is about the most massively useful thing you can have.
+		</p>
+
+		<div class="guide-entries">
+			<TravelEntry
+				location="Mount Everest"
+				rating="Mostly Harmless"
+				description="Remarkably tall pile of rocks where humans inexplicably choose to risk their lives for bragging rights and spectacular selfies. Bring oxygen, or better yet, don't go at all."
+			/>
+			<TravelEntry
+				location="Venice, Italy"
+				rating="Mostly Wet"
+				description="A city built entirely on water, proving that humans will literally live anywhere. The pigeons in St. Mark's Square are convinced they run the place."
+			/>
+			<TravelEntry
+				location="Antarctica"
+				rating="Improbably Cold"
+				description="An entire continent dedicated to ice, penguins, and scientists who apparently enjoy living in the world's largest freezer."
+			/>
+			<TravelEntry
+				location="Great Barrier Reef"
+				rating="Exceedingly Wet"
+				description="A gathering of marine creatures who've spent millions of years building elaborate underwater condominiums, only to have humans come gawk at them."
+			/>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+		text-align: center;
+		font-size: 1.2em;
+	}
+	.guide-entries {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+</style>
